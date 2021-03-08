@@ -28,11 +28,12 @@ function App() {
       marcado: true
     }
   ];
+
   return (
     <div className="contenedor">
       <header className="cabecera">
         <h1>Señores que te apuntan con el dedo</h1>
-        <p className="totales"><span className="nmarcados">0</span> señores que te apuntan con el dedo marcados</p>
+        <p className="totales"><span className="nmarcados">{senyores.filter(senyor => senyor.marcado).length}</span> señores que te apuntan con el dedo marcados</p>
         <a className="accion-marcar" href="marcar-todos">Marcar todos</a>
       </header>
       <main>
@@ -51,7 +52,7 @@ function App() {
                   <li><span className="etiqueta">Twitter:</span> {senyor.twitter}</li>
                 </ul>
               </div>
-              <i className="icono fas fa-check"></i>
+              {senyor.marcado === true && <i className="icono fas fa-check"></i>}
             </article>)
         }
       </main>
