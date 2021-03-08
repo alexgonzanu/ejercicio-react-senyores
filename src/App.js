@@ -1,4 +1,3 @@
-
 function App() {
   const senyores = [
     {
@@ -39,20 +38,20 @@ function App() {
       <main>
         {
           senyores.map(senyor =>
-            <article className="senyor">
+            <article key={senyor.id} className="senyor">
               <div className="avatar">
                 <img src={`./img/${senyor.foto}`} alt={`${senyor.nombre} señalandote con el dedo`} />
-                <span class="inicial">F</span>
+                <span className="inicial">F</span>
               </div>
               <div className="info">
                 <h2>{senyor.nombre}</h2>
                 <ul>
-                  <li><span class="etiqueta">Profesión:</span>{senyor.profesion}</li>
-                  <li><span class="etiqueta">Estado:</span> {senyor.estado}</li>
-                  <li><span class="etiqueta">Twitter:</span> {senyor.twitter}</li>
+                  <li><span className="etiqueta">Profesión:</span>{senyor.profesion}</li>
+                  <li><span className="etiqueta">Estado:</span> {senyor.estado}</li>
+                  <li><span className="etiqueta">Twitter:</span> {senyor.twitter}</li>
                 </ul>
               </div>
-              <i class="icono fas fa-check"></i>
+              <i className="icono fas fa-check"></i>
             </article>)
         }
       </main>
